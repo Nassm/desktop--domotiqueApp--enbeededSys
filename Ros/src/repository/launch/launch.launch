@@ -1,0 +1,20 @@
+<launch>
+
+	<arg name="model" default="$(find repository)/model/model.sdf" />
+	<arg name="gui" default="true" />q
+
+
+	<param name="unit_cylinder_description" textfile="$(find repository)/model/model.sdf"/>
+	<param name="unit_cylinder_description" command="$(find xacro)/xacro.py $(arg model)" />
+	<param name="use_gui" value="$(arg gui)" />
+
+	<include file ="$(find gazebo_ros)/launch/empty_world.launch" >
+
+	</include>
+
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-sdf -param unit_cylinder_description -z 1 -model unit_cylinder" output="screen" />
+
+
+	<node name="doorlisten" pkg="repository" type="test.py" />
+
+</launch>
