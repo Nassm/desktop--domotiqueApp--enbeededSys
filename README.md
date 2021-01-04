@@ -1,2 +1,2 @@
 # embeededSys-domotique-app
-Interface QT C++ , MiddleWare ROS, Bus communication, Electronic card STM32
+QT Interface (C++) , MiddleWare ROS (Python), Bus communication, Electronic card STM32 (C)
